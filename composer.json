@@ -1,5 +1,5 @@
 {
-    "name": "zendframework/zend-mail",
+    "name": "webino/zend-mail",
     "description": "provides generalized functionality to compose and send both text and MIME-compliant multipart e-mail messages",
     "license": "BSD-3-Clause",
     "keywords": [
@@ -11,6 +11,9 @@
         "psr-4": {
             "Zend\\Mail\\": "src/"
         }
+    },
+    "replace": {
+        "zendframework/zend-mail": "2.6.*"
     },
     "require": {
         "php": "^5.5 || ^7.0",
