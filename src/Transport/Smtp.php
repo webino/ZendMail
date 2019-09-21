@@ -197,6 +197,12 @@ class Smtp implements TransportInterface
      */
     public function getConnection()
     {
+        if (!($this->connection instanceof Protocol\Smtp) || !$this->connection->hasSession()) {
+            $this->connection = $this->connect();
+        } else {
+            // Reset connection to ensure reliable transaction
+            $this->connection->rset();
+        }
         return $this->connection;
     }
 
@@ -225,13 +231,6 @@ class Smtp implements TransportInterface
     {
         // If sending multiple messages per session use existing adapter
         $connection = $this->getConnection();
-
-        if (!($connection instanceof Protocol\Smtp) || !$connection->hasSession()) {
-            $connection = $this->connect();
-        } else {
-            // Reset connection to ensure reliable transaction
-            $connection->rset();
-        }
 
         // Prepare message
         $from       = $this->prepareFromAddress($message);
