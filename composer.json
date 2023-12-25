@@ -16,7 +16,7 @@
         "forum": "https://discourse.zendframework.com/c/questions/components"
     },
     "replace": {
-        "zendframework/zend-mail": "2.6.*"
+        "zendframework/zend-mail": "self.version"
     },
     "require": {
         "php": "^5.6 || ^7.0",
