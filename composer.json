@@ -13,7 +13,7 @@
         }
     },
     "replace": {
-        "zendframework/zend-mail": "2.6.*"
+        "zendframework/zend-mail": "self.version"
     },
     "require": {
         "php": "^5.5 || ^7.0",
